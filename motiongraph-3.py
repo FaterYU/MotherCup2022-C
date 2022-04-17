@@ -54,10 +54,6 @@ def fun2(x,last,q):
         return 0
     return fun1(x)*q+last
 
-# 角速度  20.0/(2.8/tan(arctan(1/(1/tan((5*PI*t)/36) + 0.6071428571))/2 + (5*PI*t)/72) - 0.85)
-# def funw(x):
-#     return 20.0/(2.8/np.tan(np.arctan(1/(1/np.tan((5*np.pi*x)/36) + 0.6071428571))/2 + (5*np.pi*x)/72) - 0.85)
-
 x1 = np.linspace(0, aat[-1][1], 10000)
 y1 = []
 y2 = []
@@ -77,37 +73,37 @@ for i in x1:
     y4.append(y4cot)
     
 print(aat)
-# #保存csv
-# with open('82-data.csv', 'w', newline='') as csvfile:
-#     writer = csv.writer(csvfile)
-#     writer.writerow(['时间t(s)', '路程s(m)', '速度v(m/s)',
-#                     '加速度a(m/s^2)', '加加速度A(m/s^3)'])
-#     for i in range(len(x1)):
-#         writer.writerow([x1[i], y4[i], y3[i], y2[i], y1[i]])
+#保存csv
+with open('82-data.csv', 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(['时间t(s)', '路程s(m)', '速度v(m/s)',
+                    '加速度a(m/s^2)', '加加速度A(m/s^3)'])
+    for i in range(len(x1)):
+        writer.writerow([x1[i], y4[i], y3[i], y2[i], y1[i]])
 
 plt.rcParams["font.sans-serif"] = ["SimHei"]  # 设置字体
 plt.rcParams["axes.unicode_minus"] = False  # 该语句解决图像中的“-”负号的乱码问题
-# #加加速度
-# plt.title("侧方停车时加加速度关于时间的变化")
-# plt.ylabel("加加速度 A(m/s^3)")
-# plt.xlabel("时间 t(s)")
-# plt.plot(x1,y1)
-# plt.show()
-# #加速度
-# plt.title("侧方停车时加速度关于时间的变化")
-# plt.ylabel("加速度 a(m/s^2)")
-# plt.xlabel("时间 t(s)")
-# plt.plot(x1, y2)
-# plt.show()
-# #速度
-# plt.title("侧方停车时速度关于时间的变化")
-# plt.ylabel("速度 v(m/s)")
-# plt.xlabel("时间 t(s)")
-# plt.plot(x1, y3)
-# plt.show()
-# #路程
-# plt.title("侧方停车时路程关于时间的变化")
-# plt.ylabel("路程 s(m)")
-# plt.xlabel("时间 t(s)")
-# plt.plot(x1, y4)
-# plt.show()
+#加加速度
+plt.title("侧方停车时加加速度关于时间的变化")
+plt.ylabel("加加速度 A(m/s^3)")
+plt.xlabel("时间 t(s)")
+plt.plot(x1,y1)
+plt.show()
+#加速度
+plt.title("侧方停车时加速度关于时间的变化")
+plt.ylabel("加速度 a(m/s^2)")
+plt.xlabel("时间 t(s)")
+plt.plot(x1, y2)
+plt.show()
+#速度
+plt.title("侧方停车时速度关于时间的变化")
+plt.ylabel("速度 v(m/s)")
+plt.xlabel("时间 t(s)")
+plt.plot(x1, y3)
+plt.show()
+#路程
+plt.title("侧方停车时路程关于时间的变化")
+plt.ylabel("路程 s(m)")
+plt.xlabel("时间 t(s)")
+plt.plot(x1, y4)
+plt.show()
