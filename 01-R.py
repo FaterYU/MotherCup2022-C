@@ -14,7 +14,7 @@ def angleToradius(angle):
 
 plt.rcParams["font.sans-serif"] = ["SimHei"]  # 设置字体
 plt.rcParams["axes.unicode_minus"] = False  # 该语句解决图像中的“-”负号的乱码问题
-print(angleToradius(470))#最大方向盘转向角(°)，输出最小转向半径(m)
+print("最小转向半径：",angleToradius(470))#最大方向盘转向角(°)，输出最小转向半径(m)
 cur=[]
 lenv=[]
 ve=20/3.6
@@ -23,7 +23,6 @@ for i in range(1,470):
     cur.append(cu)
     v = ve*cu/(cu-1.7/2)
     lenv.append(v)
-    # print(cu,"--|--",v)
 plt.ylabel("路径上的曲率")
 plt.xlabel("路径长度的变化率")
 plt.plot(lenv,cur)
