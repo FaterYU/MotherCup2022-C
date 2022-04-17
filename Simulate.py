@@ -28,6 +28,15 @@ class Car:
     t = 0#当前任务计时器
     pathlen = 0#当前任务路径长度
     
+    def Rectangle(self):
+        lst=[]
+        for i in self.frame:
+            sublist=[]
+            sublist.append(i[0]*np.cos(self.direction-np.pi/2)+i[1]*np.sin(self.direction-np.pi/2)+self.location[0])
+            sublist.append(-i[0]*np.sin(self.direction-np.pi/2)+i[1]*np.cos(self.direction-np.pi/2)+self.location[1])
+            lst.append(sublist)
+        return lst
+    
     def __init__(self, velocity, acceleration, aacceleration, steering, location, direction):
         self.velocity = velocity
         self.acceleration = acceleration
